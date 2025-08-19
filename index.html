@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Train Route Optimizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🚆 Train Route Optimizer</h1>
+
+        <div class="upload-box" id="upload-box">
+            Click or Drag & Drop GeoJSON File Here
+            <input type="file" id="file-input" style="display:none;">
+        </div>
+
+        <select id="demo-files">
+          <option value="ginza.geojson">Tokyo Metro Ginza Line</option>
+          <option value="southern_line.geojson">Auckland Southern Line</option>
+          <option value="berlinU2.geojson">Berlin U2 Line</option>
+        </select>
+
+        <div>
+            <button id="run-btn">Run Optimizer</button>
+            <button id="cancel-btn">Cancel</button>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+            <span id="progress-text">0%</span>
+        </div>
+
+        <div id="map-preview"></div>
+
+        <div class="downloads" id="downloads"></div>
+
+        <div class="info-panel" id="info-panel"></div>
+
+        <p class="footer">Created by Aaron Sood</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
